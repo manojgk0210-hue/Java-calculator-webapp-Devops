@@ -87,12 +87,13 @@ src/
 │   │   └── util/          # Utility/helper classes
 │   └── resources/
 │       └── static/        # Frontend files (HTML, CSS, JS)
-└── test/
-    └── java/com/example/calculator/
-        ├── controller/    # Controller tests
-        ├── integration/   # Integration tests
-        └── service/       # Service unit tests
-pom.xml
+├──test/
+│     └── java/com/example/calculator/
+│         ├── controller/    # Controller tests
+│         ├── integration/   # Integration tests
+│         └── service/       # Service unit tests
+└── pom.xml
+
 ```
 
 ---
