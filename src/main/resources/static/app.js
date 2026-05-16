@@ -1,4 +1,5 @@
-const API_BASE = "/api/v1/calculator";
+const APP_CONTEXT = window.location.pathname.replace(/\/(?:index\.html)?$/, "");
+const API_BASE = `${APP_CONTEXT}/api/v1/calculator`;
 
 const form = document.querySelector("#calculator-form");
 const resultValue = document.querySelector("#result-value");

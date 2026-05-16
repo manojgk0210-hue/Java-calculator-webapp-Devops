@@ -26,7 +26,7 @@ class CalculatorIntegrationTest {
     void rootEndpointShouldReturnCalculatorPage() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(forwardedUrl("index.html"));
+                .andExpect(forwardedUrl("/index.html"));
     }
 
     @Test
