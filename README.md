@@ -1,4 +1,4 @@
-# 🧮 Calculator Web App — Spring Boot
+#  Calculator Web App — Spring Boot
 
 A simple calculator web application built with **Spring Boot**. Enter two numbers and perform basic arithmetic operations right from the browser.
 
@@ -6,7 +6,7 @@ A simple calculator web application built with **Spring Boot**. Enter two number
 
 ---
 
-## 💡 Why I Built This
+## Why I Built This
 
 When practising DevOps, I kept running into problems using other people's GitHub repositories:
 
@@ -18,7 +18,7 @@ So I built my own simple project. That way, when I deploy to the cloud, I fully 
 
 ---
 
-## ✨ Features
+##  Features
 
 - Enter **two numbers** via a web form
 - Choose an operation: **Add, Subtract, Multiply, Divide**
@@ -27,7 +27,7 @@ So I built my own simple project. That way, when I deploy to the cloud, I fully 
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer      | Technology       |
 |------------|------------------|
@@ -39,7 +39,7 @@ So I built my own simple project. That way, when I deploy to the cloud, I fully 
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -63,7 +63,7 @@ Then open your browser and go to: `http://localhost:9090`
 
 ---
 
-## 🧪 Running Tests
+##  Running Tests
 
 ```bash
 ./mvnw test
@@ -73,9 +73,7 @@ All calculator operations (add, subtract, multiply, divide) are covered by unit 
 
 ---
 
-## 📁 Project Structure
-
-![Project Structure](./project-structure.png)
+## Project Structure
 
 ```
 src/
@@ -99,7 +97,7 @@ pom.xml
 
 ---
 
-## ☁️ DevOps Practice Goals
+## DevOps Practice Goals
 
 This project is built specifically for **DevOps practice** — including:
 
@@ -116,6 +114,6 @@ Having my own project makes this process smoother and more enjoyable.
 
 ---
 
-## 📄 License
+##  License
 
 This project is open source and free to use.
