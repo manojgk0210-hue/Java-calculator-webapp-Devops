@@ -36,7 +36,7 @@
     </repository>
 
     <snapshotRepository>
-        <id>nexus1</id>
+        <id>nexus</id>
         <name>Nexus Snapshots</name>
         <url>http://3.110.44.21:8081/repository/cal-snap/</url>
     </snapshotRepository>
