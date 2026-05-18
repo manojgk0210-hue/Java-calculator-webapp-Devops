@@ -27,6 +27,22 @@
 
     </properties>
 
+<distributionManagement>
+
+    <repository>
+        <id>nexus</id>
+        <name>Nexus Releases</name>
+        <url>http://13.233.110.132:8081/repository/calculator-app-releases/</url>
+    </repository>
+
+    <snapshotRepository>
+        <id>nexus</id>
+        <name>Nexus Snapshots</name>
+        <url>http://13.233.110.132:8081/repository/calculator-app-snapshot/</url>
+    </snapshotRepository>
+
+</distributionManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
