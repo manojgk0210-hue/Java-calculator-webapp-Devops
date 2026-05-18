@@ -30,15 +30,15 @@
 <distributionManagement>
 
     <repository>
-        <id>nexus1</id>
+        <id>nexus</id>
         <name>Nexus Releases</name>
-        <url>http://13.232.129.19:8081/repository/manojgk-rela/</url>
+        <url>http://3.110.44.21:8081/repository/cal-rel/</url>
     </repository>
 
     <snapshotRepository>
         <id>nexus1</id>
         <name>Nexus Snapshots</name>
-        <url>http://13.232.129.19:8081/repository/manoj-snap/</url>
+        <url>http://3.110.44.21:8081/repository/cal-snap/</url>
     </snapshotRepository>
 
 </distributionManagement>
