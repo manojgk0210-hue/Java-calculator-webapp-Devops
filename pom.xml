@@ -32,13 +32,13 @@
     <repository>
         <id>nexus</id>
         <name>Nexus Releases</name>
-        <url>http://13.232.129.19:8081/repository/calculator-app-releases/</url>
+        <url>http://13.232.129.19:8081/repository/manojgk-rela/</url>
     </repository>
 
     <snapshotRepository>
         <id>nexus</id>
         <name>Nexus Snapshots</name>
-        <url>http://13.232.129.19:8081/repository/calculator-app-snapshot/</url>
+        <url>http://13.232.129.19:8081/repository/manoj-snap/</url>
     </snapshotRepository>
 
 </distributionManagement>
