@@ -7,10 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
-import org.springframework.web.servlet.resource.NoResourceFoundException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -50,10 +50,10 @@ public class GlobalExceptionHandler {
         return buildErrorResponse(HttpStatus.BAD_REQUEST, "Malformed JSON request", List.of("Request body is invalid or missing"));
     }
 
-    @ExceptionHandler(NoResourceFoundException.class)
-    public ResponseEntity<ErrorResponse> handleNoResourceFoundException(NoResourceFoundException exception) {
-        log.warn("Resource not found: {}", exception.getResourcePath());
-        return buildErrorResponse(HttpStatus.NOT_FOUND, "Resource not found", List.of(exception.getResourcePath()));
+    @ExceptionHandler(NoHandlerFoundException.class)
+    public ResponseEntity<ErrorResponse> handleNoHandlerFoundException(NoHandlerFoundException exception) {
+        log.warn("Resource not found: {}", exception.getRequestURL());
+        return buildErrorResponse(HttpStatus.NOT_FOUND, "Resource not found", List.of(exception.getRequestURL()));
     }
 
     @ExceptionHandler(Exception.class)

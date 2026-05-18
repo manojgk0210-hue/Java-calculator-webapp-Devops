@@ -7,7 +7,7 @@
     <parent>
          <groupId>org.springframework.boot</groupId>
          <artifactId>spring-boot-starter-parent</artifactId> 
-             <version>3.3.5</version>
+             <version>2.7.18</version>
              <relativePath/>
     </parent>
 
@@ -19,8 +19,8 @@
     <description>Industry-standard Spring Boot calculator web application</description>
 
     <properties>
-        <java.version>21</java.version>
-        <maven.compiler.release>21</maven.compiler.release>
+        <java.version>17</java.version>
+        <maven.compiler.release>17</maven.compiler.release>
 
     <sonar.host.url>http://13.206.189.14:9000/</sonar.host.url>
     <sonar.token>squ_b230f412cd9cd563d91d7ea3f39c2b0f8c7e03f4</sonar.token>

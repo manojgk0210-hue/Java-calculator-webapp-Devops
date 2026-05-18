@@ -5,7 +5,7 @@ import com.example.calculator.dto.CalculatorResponse;
 import com.example.calculator.dto.SquareRootRequest;
 import com.example.calculator.service.CalculatorService;
 import com.example.calculator.util.ResponseBuilder;
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

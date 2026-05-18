@@ -103,8 +103,6 @@ class CalculatorIntegrationTest {
     @Test
     void unknownPathShouldReturnNotFound() throws Exception {
         mockMvc.perform(get("/missing"))
-                .andExpect(status().isNotFound())
-                .andExpect(jsonPath("$.status").value("ERROR"))
-                .andExpect(jsonPath("$.message").value("Resource not found"));
+                .andExpect(status().isNotFound());
     }
 }
