@@ -23,7 +23,7 @@
         <maven.compiler.release>17</maven.compiler.release>
 
     <sonar.host.url>http://13.234.213.246:9000/</sonar.host.url>
-    <sonar.token>squ_b230f412cd9cd563d91d7ea3f39c2b0f8c7e03f4</sonar.token>
+    <sonar.token>squ_6b653118713a5fac37155e55a93ec656cdde036b</sonar.token>
 
     </properties>
 
