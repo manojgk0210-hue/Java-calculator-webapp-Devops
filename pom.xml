@@ -22,8 +22,8 @@
         <java.version>17</java.version>
         <maven.compiler.release>17</maven.compiler.release>
 
-    <!-- <sonar.host.url>http://13.234.213.246:9000/</sonar.host.url>
-    <sonar.token>squ_6b653118713a5fac37155e55a93ec656cdde036b</sonar.token> -->
+    <sonar.host.url>http://52.66.238.239:9000/</sonar.host.url>
+    <sonar.token>squ_e5d759272e625ceca1629a23b43e2e40faaa514a</sonar.token>
 
     </properties>
 
