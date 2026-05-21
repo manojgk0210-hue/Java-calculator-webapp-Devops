@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Web Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app-shell">
+    <section class="calculator-panel" aria-labelledby="calculator-title">
+        <div class="panel-header">
+            <div>
+                <p class="eyebrow">Spring Boot Calculator</p>
+                <h1 id="calculator-title">Calculator</h1>
+            </div>
+            <span id="service-status" class="status-pill">Checking</span>
+        </div>
+
+        <form id="calculator-form" class="calculator-form">
+            <label for="number1">First number</label>
+            <input id="number1" name="number1" type="number" step="any" inputmode="decimal" placeholder="10">
+
+            <label for="number2">Second number</label>
+            <input id="number2" name="number2" type="number" step="any" inputmode="decimal" placeholder="5">
+
+            <div class="operation-grid" aria-label="Calculator operations">
+                <button type="button" data-operation="add">+</button>
+                <button type="button" data-operation="subtract">-</button>
+                <button type="button" data-operation="multiply">x</button>
+                <button type="button" data-operation="divide">/</button>
+                <button type="button" data-operation="modulus">%</button>
+                <button type="button" data-operation="power">x^y</button>
+                <button type="button" data-operation="sqrt" class="wide">sqrt</button>
+            </div>
+
+            <button type="reset" class="clear-button">Clear</button>
+        </form>
+
+        <section class="result-panel" aria-live="polite">
+            <p class="result-label">Result</p>
+            <p id="result-value" class="result-value">0</p>
+            <p id="result-message" class="result-message">Choose an operation to start.</p>
+        </section>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

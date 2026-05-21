@@ -1,0 +1,179 @@
+:root {
+    color-scheme: light;
+    --bg: #f4f7f6;
+    --panel: #ffffff;
+    --ink: #16211f;
+    --muted: #65706d;
+    --line: #d9e2df;
+    --accent: #0f766e;
+    --accent-dark: #115e59;
+    --danger: #b42318;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+.app-shell {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.calculator-panel {
+    width: min(100%, 480px);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 18px 50px rgba(22, 33, 31, 0.12);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.status-pill {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 10px;
+    color: var(--muted);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.status-pill.online {
+    color: var(--accent-dark);
+    border-color: #8ed9cf;
+    background: #e6fffb;
+}
+
+.calculator-form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    height: 46px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0 12px;
+    font-size: 16px;
+    color: var(--ink);
+}
+
+input:focus {
+    border-color: var(--accent);
+    outline: 3px solid rgba(15, 118, 110, 0.16);
+}
+
+.operation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+}
+
+button {
+    min-height: 46px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--accent);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--accent-dark);
+}
+
+button:disabled {
+    cursor: wait;
+    opacity: 0.75;
+}
+
+.wide {
+    grid-column: span 3;
+}
+
+.clear-button {
+    margin-top: 4px;
+    background: #334155;
+}
+
+.clear-button:hover {
+    background: #1f2937;
+}
+
+.result-panel {
+    margin-top: 22px;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+}
+
+.result-label,
+.result-message {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.result-value {
+    margin: 6px 0;
+    overflow-wrap: anywhere;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.result-message.error {
+    color: var(--danger);
+}
+
+@media (max-width: 420px) {
+    .app-shell {
+        padding: 12px;
+        align-items: start;
+    }
+
+    .calculator-panel {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
