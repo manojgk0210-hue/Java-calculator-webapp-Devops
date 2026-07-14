@@ -1,6 +1,6 @@
 package com.example.calculator.dto;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 public record CalculatorRequest(
         @NotNull(message = "number1 cannot be null")
