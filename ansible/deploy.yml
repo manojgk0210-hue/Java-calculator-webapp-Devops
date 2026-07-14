@@ -1,7 +1,10 @@
 ---
-- name: Deploy WAR to Tomcat
+- name: Deploy WAR from Nexus to Tomcat
   hosts: tomcat
   become: yes
+
+  vars:
+    nexus_url: "http://65.0.205.16:8081/repository/calculator-web-application-Snap/com/example/calculator-web-application/0.0.1-SNAPSHOT/calculator-0.0.1-20260714.140003-2.war"
 
   tasks:
 
@@ -11,7 +14,7 @@
 
     - name: Remove old WAR
       file:
-        path: /opt/tomcat/webapps/calculator.war 
+        path: /opt/tomcat/webapps/calculator.war
         state: absent
 
     - name: Remove old exploded application
@@ -19,10 +22,11 @@
         path: /opt/tomcat/webapps/calculator
         state: absent
 
-    - name: Copy WAR
-      copy:
-        src: ../target/calculator.war 
-        dest: /opt/tomcat/webapps/calculator.war 
+    - name: Download WAR from Nexus
+      get_url:
+        url: "{{ nexus_url }}"
+        dest: /opt/tomcat/webapps/calculator.war
+        mode: '0644'
 
     - name: Start Tomcat
       shell: /opt/tomcat/bin/startup.sh
