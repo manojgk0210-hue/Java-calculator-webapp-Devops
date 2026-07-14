@@ -1,12 +1,13 @@
 ---
-- name: Download WAR from Nexus
-  get_url:
-    url: "http://65.0.205.16:8081/repository/calculator-web-application-Snap/com/example/calculator-web-application/0.0.1-SNAPSHOT/calculator-0.0.1-20260714.140003-2.war"
-    dest: /opt/tomcat/webapps/calculator.war
-    url_username: admin
-    url_password: 1qazXSW@#EDC
-    force_basic_auth: yes
-    mode: '0644'
+- name: Deploy WAR from Nexus to Tomcat
+  hosts: tomcat
+  become: yes
+
+  vars:
+    nexus_url: "http://65.0.205.16:8081/repository/calculator-web-application-Snap/com/example/calculator-web-application/0.0.1-SNAPSHOT/calculator-0.0.1-20260714.140003-2.war"
+    nexus_user: "admin"
+    nexus_password: "1qazXSW@#EDC"
+
   tasks:
 
     - name: Stop Tomcat
@@ -27,6 +28,9 @@
       get_url:
         url: "{{ nexus_url }}"
         dest: /opt/tomcat/webapps/calculator.war
+        url_username: "{{ nexus_user }}"
+        url_password: "{{ nexus_password }}"
+        force_basic_auth: yes
         mode: '0644'
 
     - name: Start Tomcat
