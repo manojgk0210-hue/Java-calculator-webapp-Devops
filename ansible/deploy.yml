@@ -1,0 +1,23 @@
+---
+- name: Deploy WAR to Tomcat
+  hosts: tomcat
+  become: yes
+
+  tasks:
+
+    - name: Stop Tomcat
+      shell: /opt/tomcat/bin/shutdown.sh
+      ignore_errors: yes
+
+    - name: Remove old WAR
+      file:
+        path: /opt/tomcat/webapps/calculator-web-application.war
+        state: absent
+
+    - name: Copy WAR
+      copy:
+        src: ../target/calculator-web-application.war
+        dest: /opt/tomcat/webapps/calculator-web-application.war
+
+    - name: Start Tomcat
+      shell: /opt/tomcat/bin/startup.sh
