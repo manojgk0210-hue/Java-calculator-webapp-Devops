@@ -1,0 +1,62 @@
+pipeline {
+    agent any
+  tools {
+        maven 'Maven3'
+    }
+
+    stages {
+        stage('checkout') {
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/manojgk0210-hue/Java-calculator-webapp-Devops.git']])
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean deploy'
+            }
+        }
+        stage('Get Latest Artifact') {
+    steps {
+        withCredentials([usernamePassword(
+            credentialsId: 'nexus-creds',
+            usernameVariable: 'NEXUS_USER',
+            passwordVariable: 'NEXUS_PASSWORD'
+        )]) {
+            script {
+                def artifactUrl = sh(
+    script: '''
+    curl -s -u "${NEXUS_USER}:${NEXUS_PASSWORD}" \
+"http://65.0.205.16:8081/service/rest/v1/search/assets?repository=calculator-web-application-Snap&maven.groupId=com.example&maven.artifactId=calculator-web-application&maven.baseVersion=0.0.1-SNAPSHOT&sort=version&direction=desc" \
+| jq -r '.items[] | select(.downloadUrl | endswith(".war")) | .downloadUrl' | head -1
+    ''',
+    returnStdout: true
+).trim()
+
+                env.ARTIFACT_URL = artifactUrl
+                echo "Latest Artifact: ${env.ARTIFACT_URL}"
+            }
+        }
+    }
+}
+        
+ stage('Deploy') {
+    steps {
+        withCredentials([usernamePassword(
+            credentialsId: 'nexus-creds',
+            usernameVariable: 'NEXUS_USER',
+            passwordVariable: 'NEXUS_PASSWORD'
+        )]) {
+            sh '''
+ansible-playbook \
+-i ansible/inventory \
+ansible/deploy.yml \
+-e nexus_url="${ARTIFACT_URL}" \
+-e nexus_user="${NEXUS_USER}" \
+-e nexus_password="${NEXUS_PASSWORD}"
+'''
+        }
+    }
+}
+
+}}
+        
