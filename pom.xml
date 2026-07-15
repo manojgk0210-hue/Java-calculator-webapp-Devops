@@ -32,13 +32,13 @@
     <repository>
         <id>nexus</id>
         <name>Nexus Releases</name>
-        <url>http://65.0.205.16:8081/repository/calculator-web-application-Release/</url>
+        <url>http://52.66.139.118:8081/repository/calculator-web-application-Release/</url>
     </repository>
 
     <snapshotRepository>
         <id>nexus</id>
         <name>Nexus Snapshots</name>
-        <url>http://65.0.205.16:8081/repository/calculator-web-application-Snap/</url>
+        <url>http://52.66.139.118:8081/repository/calculator-web-application-Snap/</url>
     </snapshotRepository>
 
 </distributionManagement>
