@@ -4,7 +4,7 @@
   become: yes
 
   vars:
-    nexus_url: "http://52.66.139.118:8081/repository/calculator-web-application-Snap/com/example/calculator-web-application/0.0.1-SNAPSHOT/calculator-web-application-0.0.1-20260714.233256-13.war"
+    nexus_url: "http://34.207.72.149:8081/repository/calculator-web-application-Snap/com/example/calculator-web-application/0.0.1-SNAPSHOT/calculator-web-application-0.0.1-20260714.233256-13.war"
     nexus_user: "admin"
     nexus_password: "1qazXSW@#EDC"
 
