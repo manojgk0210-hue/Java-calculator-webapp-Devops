@@ -14,19 +14,19 @@
         path: /opt/tomcat/webapps/calculator.war
         state: absent
 
-    - name: Remove old exploded application
+    - name: Remove old exploded directory
       file:
         path: /opt/tomcat/webapps/calculator
         state: absent
 
-    - name: Download WAR from Nexus
+    - name: Download latest WAR from Nexus
       get_url:
         url: "{{ nexus_url }}"
         dest: /opt/tomcat/webapps/calculator.war
         url_username: "{{ nexus_user }}"
         url_password: "{{ nexus_password }}"
         force_basic_auth: yes
-        mode: '0644'
+        mode: "0644"
 
     - name: Start Tomcat
       shell: /opt/tomcat/bin/startup.sh
